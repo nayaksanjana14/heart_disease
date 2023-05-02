@@ -53,7 +53,7 @@ input_df = user_input_features()
 
 # Combines user input features with entire dataset
 # This will be useful for the encoding phase
-heart_dataset = pd.read_csv(r'Heart disease prediction using Streamlit.ipynb')
+heart_dataset = pd.read_csv('heart.csv')
 heart_dataset = heart_dataset.drop(columns=['target'])
 
 df = pd.concat([input_df,heart_dataset],axis=0)
@@ -66,7 +66,7 @@ df = df[:1] # Selects only the first row (the user input data)
 
 st.write(input_df)
 # Reads in saved classification model
-load_clf = pickle.load(open(r'C:\Users\sanja\Downloads\Heart-Disease-prediction-ML-and-Streamlit-main\Heart-Disease-prediction-ML-and-Streamlit-main\Random_forest_model.pkl', 'rb'))
+load_clf = pickle.load(open('Random_forest_model.pkl', 'rb'))
 
 # Apply model to make predictions
 prediction = load_clf.predict(df.values)
