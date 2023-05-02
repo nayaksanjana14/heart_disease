@@ -53,7 +53,7 @@ input_df = user_input_features()
 
 # Combines user input features with entire dataset
 # This will be useful for the encoding phase
-heart_dataset = pd.read_csv(r'C:\Users\sanja\Downloads\Heart-Disease-prediction-ML-and-Streamlit-main\Heart-Disease-prediction-ML-and-Streamlit-main\heart.csv')
+heart_dataset = pd.read_csv(r'Heart disease prediction using Streamlit.ipynb')
 heart_dataset = heart_dataset.drop(columns=['target'])
 
 df = pd.concat([input_df,heart_dataset],axis=0)
